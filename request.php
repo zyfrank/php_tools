@@ -3,14 +3,11 @@
 
 date_default_timezone_set('UTC');
    $ip = $_SERVER['REMOTE_ADDR'];
-   $datex = date('l jS \of F Y h:i:s A');
-   $header = "Header:";
-   foreach (getallheaders() as $name => $value) {
-       $header = $header + $name + ":" + $value + "-----"
-   }
+   $datex = date("F j, Y, g:i a");
 
-   $record = $datex +  "  ---  " + $header + "\n";
-   $fp = fopen('access.log', 'a');
+
+   $record = $datex + "\n";
+   $fp = fopen('access.logs', 'a');
    fwrite($fp, $record);
    fclose($fp);
 ?>
