@@ -3,7 +3,7 @@
    $datex = date("Y-m-d");
 
 
-   $record = $datex + "\r\n";
+   $record = $datex . "\r\n";
 
 //   file_put_contents('access.logs', $record, FILE_APPEND)
    $fp = fopen('access.logs', 'a');
@@ -19,7 +19,7 @@ echo "The time is " . date("h:i:sa") . "<br>";
 echo  $datex . "<br>"
  $header = "Header:";
    foreach (getallheaders() as $name => $value) {
-       $header = $header + $name + ":" + $value + "-----"
+       $header = $header . $name . ":" . $value . "-----"
    }
 echo $header
    
