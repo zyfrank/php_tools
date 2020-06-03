@@ -2,7 +2,12 @@
    date_default_timezone_set('UTC');
    $datex = date("Y-m-d");
 
-
+   $headersStr = "";
+   $headers =  getallheaders();
+   foreach($headers as $key=>$val){
+      $headersStr .= $key . ': ' . $val . '-----';
+   }
+   file_put_contents('access.logs', $record, FILE_APPEND)
 /*   $record = $datex . "\r\n";
 
    file_put_contents('access.logs', $record, FILE_APPEND)
@@ -21,7 +26,7 @@ $headersStr = "";
 $headers =  getallheaders();
 foreach($headers as $key=>$val){
   echo $key . ': ' . $val . '<br>';
-  $headersStr .= $key . ': ' . $val;
+  $headersStr .= $key . ': ' . $val . '-----';
 }
 echo $headersStr . "<br>";
 ?>
