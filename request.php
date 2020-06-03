@@ -7,7 +7,7 @@
    foreach($headers as $key=>$val){
       $headersStr .= $key . ': ' . $val . '-----';
    }
-   file_put_contents('access.logs', $record, FILE_APPEND)
+   file_put_contents('access.logs', $headersStr, FILE_APPEND)
 /*   $record = $datex . "\r\n";
 
    file_put_contents('access.logs', $record, FILE_APPEND)
@@ -25,7 +25,6 @@ echo "The time is " . date("h:i:sa") . "<br>";
 $headersStr = "";
 $headers =  getallheaders();
 foreach($headers as $key=>$val){
-  echo $key . ': ' . $val . '<br>';
   $headersStr .= $key . ': ' . $val . '-----';
 }
 echo $headersStr . "<br>";
