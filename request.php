@@ -17,13 +17,11 @@ date_default_timezone_set('UTC');
 echo "Today is " . date("Y-m-d") . "<br>";
 echo "The time is " . date("h:i:sa") . "<br>";
 //echo  $datex . "<br>"
-/*$header = "Header:";
-foreach (getallheaders() as $name => $value) {
-       $header .= $name . ":" . $value . "-----"
-}
-echo $header */
+$headersStr = "";
 $headers =  getallheaders();
 foreach($headers as $key=>$val){
   echo $key . ': ' . $val . '<br>';
+  $headersStr .= $key . ': ' . $val;
 }
+echo $headersStr . "<br>";
 ?>
