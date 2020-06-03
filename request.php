@@ -6,7 +6,7 @@
    foreach($headers as $key=>$val){
       $headersStr .= $key . ': ' . $val . '-----';
    }
-   $record =  date("Y-m-d") . '  ' . date("h:i:sa") . ':::::' . $headersStr;
+   $record =  date("Y-m-d") . '  ' . date("h:i:sa") . ':::::' . $headersStr . "\n\r";
    file_put_contents('access.logs', $record, FILE_APPEND)
 ?>
 
