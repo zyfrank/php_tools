@@ -4,9 +4,9 @@
    $headersStr = "";
    $headers =  getallheaders();
    foreach($headers as $key=>$val){
-      $headersStr .= $key . ': ' . $val . '-----';
+      $headersStr .= $key . ': ' . $val . "\n";
    }
-   $record =  date("Y-m-d") . '  ' . date("h:i:sa") . ':::::' . $headersStr . "\n\r";
+   $record =  date("Y-m-d") . '  ' . date("h:i:sa") . ":::::\n" . $headersStr . "\n\r";
    file_put_contents('access.logs', $record, FILE_APPEND)
 ?>
 
